@@ -1,0 +1,138 @@
+
+/* this part responsible sa buong html, para mawala yung white sa gilid */
+* {
+    margin: 0;
+    padding: 0;
+   
+}
+
+
+.Login-Page-Container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #1E1E1E;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+}
+
+.Login-Page-Picture{
+    width: 580px;
+    height: 722px;
+    position: absolute;
+    top: 12%;
+    left: 20%;
+    background-color: rgb(87, 90, 93);
+    border-radius: 40px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); 
+    background-image: url(/pics/Login-page-pic.jpg);
+    background-size: cover;
+    background-position: center;
+
+
+
+}
+
+.Login-Panel{
+
+    width: 580px;
+    height: 722px;
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    background-color: #2D2D2D;
+    border-radius: 40px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #CCCCCC;
+    font-family:'Courier New', Courier, monospace
+    
+
+
+}
+
+.Login-Panel-Text{
+    color: #000000;
+}
+
+#Sign-Up-Text{
+    font-size: 36px;
+    font-weight: bold;
+    font-family: oswald;
+    margin-right: 30%;
+    margin-top:  20%;
+    color: #CCCCCC;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 5%;
+    
+}
+
+.Login-Panel-Input{
+
+    height: 32px;
+    width: 301px;
+    display: block;
+    margin-bottom: 15px;
+    background-color: #1E1E1E ;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;  
+    overflow: hidden;
+    resize: none;
+    font-size: 15px;
+    text-align: start;
+    color: #CCCCCC;
+    padding-left: 5px;
+    line-height: 35px;
+}
+
+#Sign-In-Button{
+    
+    height: 32px;
+    width: 312px;
+    display: block;
+    margin-bottom: 15px;
+    background-color: #00FFFF ;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+
+    border-radius: 4px;  
+
+}
+
+.Social-Media-Buttons-Container {
+    display: flex;
+    justify-content: center;   /* center the row */
+    gap: 30px;                 /* 20px spacing between buttons */
+    margin-top: 10px;          /* optional: vertical space from other content */
+}
+
+.Social-Media-Buttons {
+    height: 32px;
+    width: 141px;
+    display: flex;
+    align-items: center;       
+    justify-content: center;   
+    background-color: #CCCCCC;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #1E1E1E;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+
+}
+
+.Social-Media-Buttons:hover {
+   color: #fff;
+   background-color: #1E1E1E;
+   
+}
+
+
+.Social-Media-Buttons .icon {
+    margin-right: 8px;
+}
