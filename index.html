@@ -11,7 +11,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Triodion&display=swap" rel="stylesheet">
+        
 </head>
 <body>
 
@@ -57,21 +60,73 @@
     <!-- For Home page -->
 
     <div class="Main-Container" id="HomePage" style="display: none;"> 
+
+
       <div class="Home-Page-Header">
         <div id="Home-Page-Header-Menu-Text"> Menu</div>
         <div id="Home-Page-Header-Search-Panel"> 
           <button class="search-button">
             <i class="fas fa-search"></i>
           </button>
-          <input type="text" placeholder="Search..." class="search-input" />
+          <input type="text" placeholder="Search in List..." class="search-input" />
           
+        </div>
+        <div class="Home-Page-Header-Menu-Title"> Tasks
+          <div class="Home-Page-Sidebar-Items-Container"> 
+            <div class="Home-Page-Sidebar-Items"> 
+              <i class="fa-solid fa-angle-double-right" style="color: #ffffff;"></i> Upcoming</div>
+            <div class="Home-Page-Sidebar-Items"> 
+              <i class="fa-solid fa-list" style="color: #ffffff; margin-right: 5px;" ma></i>Today</div>
+            <div class="Home-Page-Sidebar-Items"> 
+              <i class="fa-regular fa-calendar" style="color: #ffffff;  margin-right: 5px;"></i>Calendar </div>
+            <div class="Home-Page-Sidebar-Items">
+              <i class="fa-solid fa-note-sticky" style="color: #ffffff; margin-right: 5px;"></i>Sticky Wall</div>
+          </div>
+
+
+            
+
+
+        </div>
+
+        <div class="Home-Page-Header-Menu-Title"> List
+          <div class="Home-Page-Sidebar-Items-Container"> 
+            <div class="Home-Page-Sidebar-Items"> <span class="tag-dot"></span>  Work</div>
+            <div class="Home-Page-Sidebar-Items"> <span class="tag-dot"></span>  Personal</div>
+            <div class="Home-Page-Sidebar-Items"> <span class="tag-dot"></span>  Calendar </div>
+            <div class="Home-Page-Sidebar-Items"> <span class="tag-dot"></span>  Study</div>
+          </div>
+
+          <!-- WILL BE EDIT LATER ON, PAGTAPOS KO SA JS!, TEMPT ONLY :)-->
+          <script>
+            const colors = ["#FF6B6B", "#6BCB77", "#4D96FF", "#FFD93D", "#F78C6B", "#8C6BF7"];
+          
+            document.querySelectorAll(".tag-dot").forEach(dot => {
+              const randomColor = colors[Math.floor(Math.random() * colors.length)];
+              dot.style.backgroundColor = randomColor;
+            });
+          </script>
+          
+        </div>
+
+
+        <div class="Acccount-Options-Container">
+          <div class="Acccount-Options-Items" id="Settings-Button">
+            <i class="fa-solid fa-gears" style="color: #ffffff; font-size: 12px;"></i> Settings </div>
+          <div class="Acccount-Options-Items" id="Sign-Out-Button"> 
+            <i class="fa-solid fa-right-from-bracket" style="color: #ffffff; margin-right: 10px; font-size: 12px;"></i>Sign Out </div>
         </div>
 
 
         
       
-      
+
+        
+
+
       </div>
+
+
       <div class="Home-Page-Contents">  </div>
 
 
