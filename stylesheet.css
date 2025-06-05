@@ -15,7 +15,7 @@ html, body {
 
 /* PAGE CONTAINER */
 .Main-Container {
-    width: 100%;
+    width: 100vw;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -34,8 +34,8 @@ html, body {
 
 /* LEFT SIDE IMAGE */
 .Login-Page-Picture {
-    width: 580px;
-    height: 722px;
+    width: 450px;
+    height: 600px;
     background-color: rgb(87, 90, 93);
     border-radius: 40px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); 
@@ -46,8 +46,8 @@ html, body {
 
 /* RIGHT SIDE PANEL */
 .Login-Panel {
-    width: 580px;
-    height: 722px;
+    width: 450px;
+    height: 600px;
     background-color: #2D2D2D;
     border-radius: 40px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); 
@@ -65,7 +65,7 @@ html, body {
     font-family: 'Oswald', sans-serif;
     margin-bottom: 40px;
     margin-top: 70px;
-    margin-left: 20%;
+    margin-left: 10%;
     color: #CCCCCC;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     align-self: flex-start;
@@ -166,4 +166,78 @@ html, body {
 .Sign-Up-Botton a:hover{
     color: #00FFFF;
     cursor: pointer;
+}
+
+#HomePage{
+    justify-content: flex-start;
+}
+
+.Home-Page-Header {
+    height: 640px;
+    width: 300px;
+    background-color: #101010;
+    border-radius: 20px;
+    position: relative;
+    margin-left: 60px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); 
+    padding: 40px 40px;
+
+
+
+}
+
+.Home-Page-Contents{
+    height: 640px;
+    width: 1050px;
+    background-color: #101010;
+    border-radius: 20px;
+    margin-left: 30px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); 
+
+}
+
+#Home-Page-Header-Menu-Text{
+    font-family: oswald;
+    font-size: 32px;
+    margin: auto;
+    color: #F4F4F4;
+}
+
+#Home-Page-Header-Search-Panel{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-top: 20px;
+}
+
+
+
+.search-input {
+  width: 100%;
+  height: 30px;
+  padding: 0 35px 0 10px; /* right padding for the icon */
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1e1e1e;
+  color: #ccc;
+  outline: none;
+  border-radius: 10px;
+}
+
+.search-button {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  color: #ccc;
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px;
+}
+
+.search-button i {
+  pointer-events: none; /* lets the button click through the icon */
 }
