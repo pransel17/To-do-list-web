@@ -6,31 +6,40 @@
     <title>To Do List</title>
     <link rel="stylesheet" href="/stylesheet.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Oswald:wght@200..700&family=Triodion&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
+    
 </head>
 <body>
 
     <!--LOG IN PAGE -->
-    <div class="Login-Page-Container"> 
-
-        <div class="Login-Page-Picture"> </div>
-        <div class="Login-Panel"> 
-            <div class="Login-Panel-Text" id="Sign-Up-Text"> Sign up </div>
-            <textarea class="Login-Panel-Input"> email.example@gmail.com </textarea>
-            <textarea class="Login-Panel-Input"> ********** </textarea>
-            <button id="Sign-In-Button"> Sign In </button>
-            <div> or </div>
-            <div class="Social-Media-Buttons-Container"> 
-                <button class="Social-Media-Buttons" id="Google">  
-                    <i class="fab fa-google icon"></i> Google 
-                </button>
-                <button class="Social-Media-Buttons" id="Facebook"> 
-                     <i class="fab fa-facebook-f icon"></i> Facebook 
-                </button>
+    <div class="Main-Container">
+        <div class="Login-Wrapper">
+          <div class="Login-Page-Picture"></div>
+          <div class="Login-Panel">
+            <div id="Sign-In-Text">Sign in</div>
+            <input type="text" class="Login-Panel-Input" placeholder="Username" />
+            <input type="password" class="Login-Panel-Input" placeholder="Password" />
+            <button id="Sign-In-Button">Sign in</button>
+      
+            <div class="Social-Media-Buttons-Container">
+                <div class="Social-Media-Buttons">
+                  <i class="fab fa-google"></i>&nbsp;Google
+                </div>
+                <div class="Social-Media-Buttons">
+                  <i class="fab fa-facebook-f"></i>&nbsp;Facebook
+                </div>
             </div>
+
+            <div class="Sign-Up-Botton"> Don't have an account? 
+                <a href=" "> Sign Up!</a>
+            </div>
+          </div>
+        </div>
+      </div>
       
 
 
@@ -42,6 +51,25 @@
 
 
     </div>
+
+
+
+    <!-- For Home page -->
+
+    <div class="HomePage"> </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="/todo-list.js"> </script>
       
 
 
