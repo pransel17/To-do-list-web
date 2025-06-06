@@ -73,13 +73,13 @@
         </div>
         <div class="Home-Page-Header-Menu-Title"> Tasks
           <div class="Home-Page-Sidebar-Items-Container"> 
-            <div class="Home-Page-Sidebar-Items"> 
+            <div class="Home-Page-Sidebar-Items sidebar-button" id="Upcoming-Sidebar-Button"> 
               <i class="fa-solid fa-angle-double-right" style="color: #ffffff;"></i> Upcoming</div>
-            <div class="Home-Page-Sidebar-Items"> 
+            <div class="Home-Page-Sidebar-Items sidebar-button" id="Today-Sidebar-Button"> 
               <i class="fa-solid fa-list" style="color: #ffffff; margin-right: 5px;" ma></i>Today</div>
-            <div class="Home-Page-Sidebar-Items"> 
+            <div class="Home-Page-Sidebar-Items sidebar-button" id="Calendar-Sidebar-Button"> 
               <i class="fa-regular fa-calendar" style="color: #ffffff;  margin-right: 5px;"></i>Calendar </div>
-            <div class="Home-Page-Sidebar-Items">
+            <div class="Home-Page-Sidebar-Items sidebar-button" id="StickyWall-Sidebar-Button">
               <i class="fa-solid fa-note-sticky" style="color: #ffffff; margin-right: 5px;"></i>Sticky Wall</div>
           </div>
 
@@ -91,10 +91,9 @@
 
         <div class="Home-Page-Header-Menu-Title"> List
           <div class="Home-Page-Sidebar-Items-Container"> 
-            <div class="Home-Page-Sidebar-Items"> <span class="tag-dot"></span>  Work</div>
-            <div class="Home-Page-Sidebar-Items"> <span class="tag-dot"></span>  Personal</div>
-            <div class="Home-Page-Sidebar-Items"> <span class="tag-dot"></span>  Calendar </div>
-            <div class="Home-Page-Sidebar-Items"> <span class="tag-dot"></span>  Study</div>
+            <div class="Home-Page-Sidebar-Items sidebar-button" id="List-Work-Button"> <span class="tag-dot"></span>  Work</div>
+            <div class="Home-Page-Sidebar-Items sidebar-button" id="List-Personal-Button"> <span class="tag-dot"></span>  Personal</div>
+            <div class="Home-Page-Sidebar-Items sidebar-button" id="List-Study-Button"> <span class="tag-dot"></span>  Study</div>
           </div>
 
           <!-- WILL BE EDIT LATER ON, PAGTAPOS KO SA JS!, TEMPT ONLY :)-->
@@ -110,10 +109,10 @@
         </div>
 
 
-        <div class="Acccount-Options-Container">
-          <div class="Acccount-Options-Items" id="Settings-Button">
+        <div class="Account-Options-Container">
+          <div class="Account-Options-Items" id="Settings-Button">
             <i class="fa-solid fa-gears" style="color: #ffffff; font-size: 12px;"></i> Settings </div>
-          <div class="Acccount-Options-Items" id="Sign-Out-Button"> 
+          <div class="Account-Options-Items" id="Sign-Out-Button"> 
             <i class="fa-solid fa-right-from-bracket" style="color: #ffffff; margin-right: 10px; font-size: 12px;"></i>Sign Out </div>
         </div>
 
@@ -127,7 +126,76 @@
       </div>
 
 
-      <div class="Home-Page-Contents">  </div>
+
+
+      <!-- CONTENTS PER PAGES-->
+      <div class="Home-Page-Contents">  Home page </div>
+
+      <div class="Home-Page-Contents" id="Upcoming-Page" style="display: none;"> 
+        <div id="Upcoming-Page-Header"> Upcoming </div>
+        <div class="Upcoming-Container">Today
+          <div class="Upcoming-Today-Tasks">
+            <div class="Upcoming-task-input-wrapper">
+              <button class="Upcoming-add-task-btn" id="Upcoming-Today-add-task-btn">+</button>
+              <input type="text" placeholder="Add new task" class="task-input" id="Upcoming-Today-task-input">
+            </div>
+
+            <!-- PLACEHOLDER ONLY, SA DATA BASE BABAGUHIN-->
+            <div class="Upcoming-Today-Tasks">
+              <label class="task-item">
+                <input type="checkbox" />
+                <span>Database for company</span>
+              </label>
+              <label class="task-item">
+                <input type="checkbox" />
+                <span>Prepare presentation slides</span>
+              </label>
+            </div>
+          
+          </div>
+        </div>
+
+
+        <div id="Upcoming-Shared-Container"> 
+
+          <div class="Upcoming-Container" id="Upcoming-Tomorrow-Container"> Tomorow 
+            <div class="Upcoming-Today-Tasks" id="Upcoming-Tomorrow-Tasks">
+              <div class="Upcoming-task-input-wrapper" id="Upcoming-Tomorrow-task-input-wrapper">
+                <button class="Upcoming-add-task-btn" id="Upcoming-Tomorrow-add-task-btn">+</button>
+                <input type="text" placeholder="Add new task" class="task-input" id="Upcoming-Tomorrow-task-input">
+              </div>
+            </div>
+          </div>
+
+          <div class="Upcoming-Container" id="Upcoming-ThisWeek-Container"> This Week
+            <div class="Upcoming-Today-Tasks" id="Upcoming-ThisWeek-Tasks">
+              <div class="Upcoming-task-input-wrapper" id="Upcoming-ThisWeek-task-input-wrapper">
+                <button class="Upcoming-add-task-btn" id="Upcoming-ThisWeek-add-task-btn">+</button>
+                <input type="text" placeholder="Add new task" class="task-input" id="Upcoming-ThisWeek-task-input">
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+
+
+
+
+
+      </div>
+
+
+
+
+      <div class="Home-Page-Contents" id="Today-Page" style="display: none;"> Today </div>
+      <div class="Home-Page-Contents" id="Calendar-Page" style="display: none;"> Calendar </div>
+      <div class="Home-Page-Contents" id="StickyWall-Page" style="display: none;"> StickyWall </div>
+
+      <!-- LIST PAGES -->
+      <div class="Home-Page-Contents" id="List-Work-Page" style="display: none;"> Work </div>
+      <div class="Home-Page-Contents" id="List-Personal-Page" style="display: none;"> personal </div>
+      <div class="Home-Page-Contents" id="List-Study-Page" style="display: none;"> study </div>
 
 
 
