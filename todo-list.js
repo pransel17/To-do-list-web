@@ -104,32 +104,47 @@ sidebarButtons.forEach(button => {
 
 // aayusin pa later
 
-document.getElementById("Upcoming-Today-add-task-btn").addEventListener("click", function () {
-  const input = document.getElementById("Upcoming-Today-task-input");
-  const taskText = input.value.trim();
-  if (taskText === "") return;
+// This function sets up task adding functionality for any container
+function setupTaskInput(wrapperSelector) { 
+  const wrapper = document.querySelector(wrapperSelector);
+  if (!wrapper) return;
 
-  const taskList = document.querySelector(".Upcoming-Today-Tasks");
+  const addButton = wrapper.querySelector(".Add-task-btn");
+  const input = wrapper.querySelector(".task-input");
+  const taskList = wrapper.parentElement.querySelector(".Upcoming-Tasks");
 
-  // Create label
-  const taskLabel = document.createElement("label");
-  taskLabel.classList.add("task-item");
+  addButton.addEventListener("click", function () {
+    const taskText = input.value.trim();
+    if (taskText === "") return;
 
-  // Create checkbox input
-  const checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
+    // Create task label
+    const taskLabel = document.createElement("label"); // createElement("label") → create a <label> element from the html file wow so kahit di me magdeclare for each galing
+    taskLabel.classList.add("task-item"); //t adds the specified class(es) to that element’s class attribute. DAEEEBAAK
 
-  // Create span for task text
-  const span = document.createElement("span");
-  span.textContent = taskText;
+    // Create checkbox
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.classList.add("Today-checkbox");
 
-  // Append checkbox and span to label
-  taskLabel.appendChild(checkbox);
-  taskLabel.appendChild(span);
+    // Create task span
+    const span = document.createElement("span");
+    span.textContent = taskText;
 
-  // Append label to task list
-  taskList.appendChild(taskLabel);
+    taskLabel.appendChild(checkbox);
+    taskLabel.appendChild(span);
 
-  // Clear input
-  input.value = "";
-});
+    taskList.appendChild(taskLabel);
+
+    input.value = "";
+  });
+}
+
+// Call the function for each section // Dito gagana yung wrapper selector
+setupTaskInput("#Today-task-input-wrapper");
+
+
+
+
+
+
+

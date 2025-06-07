@@ -131,23 +131,25 @@
       <!-- CONTENTS PER PAGES-->
       <div class="Home-Page-Contents">  Home page </div>
 
+
+
       <div class="Home-Page-Contents" id="Upcoming-Page" style="display: none;"> 
-        <div id="Upcoming-Page-Header"> Upcoming </div>
-        <div class="Upcoming-Container">Today
-          <div class="Upcoming-Today-Tasks">
-            <div class="Upcoming-task-input-wrapper">
-              <button class="Upcoming-add-task-btn" id="Upcoming-Today-add-task-btn">+</button>
-              <input type="text" placeholder="Add new task" class="task-input" id="Upcoming-Today-task-input">
-            </div>
+
+
+        <div class="Square-Page-Header"> Upcoming </div>
+
+        <div class="Square-Container" id="Upcoming-Today-Container">Today
+          <div class="Upcoming-Today-Tasks" id="Upcoming-Today-Tasks">
+
 
             <!-- PLACEHOLDER ONLY, SA DATA BASE BABAGUHIN-->
-            <div class="Upcoming-Today-Tasks">
-              <label class="task-item">
-                <input type="checkbox" />
+            <div class="Upcoming-Tasks" id="Upcoming-today-tasks">
+              <label class="task-item" id="Today-task-item">
+                <input type="checkbox" id="Today-checkbox" />
                 <span>Database for company</span>
               </label>
-              <label class="task-item">
-                <input type="checkbox" />
+              <label class="task-item"  id="Today-task-item">
+                <input type="checkbox" id="Today-checkbox" />
                 <span>Prepare presentation slides</span>
               </label>
             </div>
@@ -158,20 +160,42 @@
 
         <div id="Upcoming-Shared-Container"> 
 
-          <div class="Upcoming-Container" id="Upcoming-Tomorrow-Container"> Tomorow 
+          <!-- TOMORROW -->
+
+          <div class="Square-Container" id="Upcoming-Tomorrow-Container"> Tomorow 
             <div class="Upcoming-Today-Tasks" id="Upcoming-Tomorrow-Tasks">
-              <div class="Upcoming-task-input-wrapper" id="Upcoming-Tomorrow-task-input-wrapper">
-                <button class="Upcoming-add-task-btn" id="Upcoming-Tomorrow-add-task-btn">+</button>
-                <input type="text" placeholder="Add new task" class="task-input" id="Upcoming-Tomorrow-task-input">
+
+                          <!-- PLACEHOLDER ONLY, SA DATA BASE BABAGUHIN-->
+              <div class="Upcoming-Tasks" id="Upcoming-today-tasks">
+                <label class="task-item" id="Today-task-item">
+                  <input type="checkbox" id="Today-checkbox" />
+                  <span>Database for company</span>
+                </label>
+                <label class="task-item"  id="Today-task-item">
+                  <input type="checkbox" id="Today-checkbox" />
+                  <span>Prepare presentation slides</span>
+                </label>
               </div>
             </div>
           </div>
 
-          <div class="Upcoming-Container" id="Upcoming-ThisWeek-Container"> This Week
+          <!-- THIS WEEK -->
+
+
+          <div class="Square-Container" id="Upcoming-ThisWeek-Container"> This Week
             <div class="Upcoming-Today-Tasks" id="Upcoming-ThisWeek-Tasks">
-              <div class="Upcoming-task-input-wrapper" id="Upcoming-ThisWeek-task-input-wrapper">
-                <button class="Upcoming-add-task-btn" id="Upcoming-ThisWeek-add-task-btn">+</button>
-                <input type="text" placeholder="Add new task" class="task-input" id="Upcoming-ThisWeek-task-input">
+
+
+                          <!-- PLACEHOLDER ONLY, SA DATA BASE BABAGUHIN-->
+              <div class="Upcoming-Tasks" id="Upcoming-thisweek-tasks">
+                <label class="task-item" id="Today-task-item">
+                  <input type="checkbox" id="Today-checkbox" />
+                  <span>Database for company</span>
+                </label>
+                <label class="task-item"  id="Today-task-item">
+                  <input type="checkbox" id="Today-checkbox" />
+                  <span>Prepare presentation slides</span>
+                </label>
               </div>
             </div>
           </div>
@@ -187,8 +211,56 @@
 
 
 
+      <!-- TODAY PAGE -->
+      <div class="Home-Page-Contents" id="Today-Page" style="display: none;"> 
 
-      <div class="Home-Page-Contents" id="Today-Page" style="display: none;"> Today </div>
+        
+        <div class="Square-Page-Header"> Today </div>
+        <div class="Square-Container" id="Today-Container">
+          <div id="Today-Date-Automation">Today</div>
+          <div class="Task-input-wrapper" id="Today-task-input-wrapper">
+            <button class="Add-task-btn" id="Today-add-task-btn">+</button>
+            <input type="text" placeholder="Add new task" class="task-input" id="Today-task-input">
+          </div>
+
+          <!-- PLACEHOLDER ONLY, SA DATA BASE BABAGUHIN-->
+          <div class="Upcoming-Tasks">
+            <label class="task-item">
+              <input type="checkbox" />
+              <span>Database for company</span>
+            </label>
+            <label class="task-item">
+              <input type="checkbox"/>
+              <span>Prepare presentation slides</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+
+      
+      <!-- AUTOMATED DATE FOR HEADER, MIGHT CHANGE LATER SA BACKEND -->
+        
+      
+
+      <script>
+        //  Get today's date
+        const today = new Date();
+      
+        // Format the date — e.g., "June 7, 2025"
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedDate = today.toLocaleDateString(undefined, options);
+      
+        // : Insert into the div
+        document.getElementById("Today-Date-Automation").textContent = formattedDate;
+      </script> 
+
+      
+      
+
+
+
+
       <div class="Home-Page-Contents" id="Calendar-Page" style="display: none;"> Calendar </div>
       <div class="Home-Page-Contents" id="StickyWall-Page" style="display: none;"> StickyWall </div>
 
