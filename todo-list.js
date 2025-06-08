@@ -148,3 +148,102 @@ setupTaskInput("#Today-task-input-wrapper");
 
 
 
+  // <---------------CALENDAR--------------> 
+  //  DATE AUTOMATION
+
+const today = new Date();
+
+// Format the date — e.g., "June 7, 2025"
+const options = { year: 'numeric', month: 'long', day: 'numeric' };
+const formattedDate = today.toLocaleDateString(undefined, options);
+
+// : Insert into the div
+document.getElementById("Today-Date-Automation").textContent = formattedDate;
+document.getElementById("Calendar-Date-Automation").textContent = formattedDate;
+
+
+// FOR CALENDAR DISPLAY
+
+let currentDate = new Date();
+const monthNames = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];    
+const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];    
+function generateCalendar() {
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
+    
+    // Update month/year display
+    document.getElementById('cal-month-year').textContent = 
+        `${monthNames[month]} ${year}`;    
+    // Clear previous calendar
+    const grid = document.getElementById('cal-grid');
+    grid.innerHTML = '';    
+    // Add day headers
+    dayNames.forEach(day => {
+        const dayHeader = document.createElement('div');
+        dayHeader.className = 'cal-day-header';
+        dayHeader.textContent = day;
+        grid.appendChild(dayHeader);
+    });    
+    // Get first day of month and number of days
+    const firstDay = new Date(year, month, 1);
+    const lastDay = new Date(year, month + 1, 0);
+    const daysInMonth = lastDay.getDate();
+    const startingDayOfWeek = firstDay.getDay();    
+    // Add empty cells for days before month starts
+    for (let i = 0; i < startingDayOfWeek; i++) {
+        const prevMonthDay = new Date(year, month, -(startingDayOfWeek - 1 - i));
+        const dayCell = document.createElement('div');
+        dayCell.className = 'cal-day-cell';
+        dayCell.innerHTML = `<span class="cal-day-number cal-day-other-month">${prevMonthDay.getDate()}</span>`;
+        grid.appendChild(dayCell);
+    }    
+    // Add days of current month
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dayCell = document.createElement('div');
+        dayCell.className = 'cal-day-cell';
+        
+        // Check if this is today
+        const cellDate = new Date(year, month, day);
+        if (cellDate.toDateString() === today.toDateString()) {
+            dayCell.classList.add('cal-day-today');
+        }    
+        dayCell.innerHTML = `<span class="cal-day-number">${day}</span>`;
+        dayCell.onclick = () => selectDay(dayCell, day);
+        grid.appendChild(dayCell);
+    }    
+    // Fill remaining cells with next month's days
+    const totalCells = 42; // 6 rows × 7 days
+    const cellsUsed = startingDayOfWeek + daysInMonth;
+    for (let day = 1; cellsUsed + day - 1 < totalCells; day++) {
+        const dayCell = document.createElement('div');
+        dayCell.className = 'cal-day-cell';
+        dayCell.innerHTML = `<span class="cal-day-number cal-day-other-month">${day}</span>`;
+        grid.appendChild(dayCell);
+    }
+}    
+function changeMonth(direction) {
+    currentDate.setMonth(currentDate.getMonth() + direction);
+    generateCalendar();
+}    
+function selectDay(cell, day) {
+    // Remove previous selection
+    document.querySelectorAll('.cal-day-selected').forEach(el => {
+        el.classList.remove('cal-day-selected');
+    });
+    
+    // Add selection to clicked day
+    if (!cell.querySelector('.cal-day-other-month')) {
+        cell.classList.add('cal-day-selected');
+    }
+}    
+function goToToday() {
+    currentDate = new Date();
+    generateCalendar();
+}    
+// Initialize calendar
+generateCalendar();
+
+
+

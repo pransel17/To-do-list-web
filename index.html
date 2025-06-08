@@ -43,16 +43,6 @@
           </div>
         </div>
       </div>
-      
-
-
-
-        </div>
-
-
-
-
-
     </div>
 
 
@@ -238,30 +228,39 @@
       </div>
 
 
-      
-      <!-- AUTOMATED DATE FOR HEADER, MIGHT CHANGE LATER SA BACKEND -->
-        
-      
-
-      <script>
-        //  Get today's date
-        const today = new Date();
-      
-        // Format the date — e.g., "June 7, 2025"
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        const formattedDate = today.toLocaleDateString(undefined, options);
-      
-        // : Insert into the div
-        document.getElementById("Today-Date-Automation").textContent = formattedDate;
-      </script> 
-
-      
-      
 
 
+      <!-- CALENDAR PAGE --> <!-- OWEMJI AYOQ NA-->
+      <div class="Home-Page-Contents" id="Calendar-Page" style="display: none;"> 
+
+        <div class="Square-Page-Header" id="Calendar-Date-Automation"> DATE</div>
+
+        <div class="Square-Container" id="Calendar-Container">
+            <div class="cal-wrapper">
+              <div class="cal-controls">
+                <button class="cal-today-btn" onclick="goToToday()">Today</button>
+              </div>
+              
+              <div class="cal-header">
+                <button class="cal-nav-btn" onclick="changeMonth(-1)">‹ Prev</button>
+                <div class="cal-month-year" id="cal-month-year"></div>
+                <button class="cal-nav-btn" onclick="changeMonth(1)">Next ›</button>
+              </div>
+              
+              <div class="cal-grid" id="cal-grid">
+                <!-- Calendar will be generated here -->
+              </div>
+            </div>
+        </div>
+
+      </div>
 
 
-      <div class="Home-Page-Contents" id="Calendar-Page" style="display: none;"> Calendar </div>
+
+
+
+
+
       <div class="Home-Page-Contents" id="StickyWall-Page" style="display: none;"> StickyWall </div>
 
       <!-- LIST PAGES -->
@@ -283,6 +282,9 @@
     </div>
 
 
+    
+
+
 
 
 
@@ -294,6 +296,11 @@
 
 
     <script src="/todo-list.js"> </script>
+
+          
+    <!-- AUTOMATED DATE FOR HEADER, MIGHT CHANGE LATER SA BACKEND -->
+
+
       
 
 
