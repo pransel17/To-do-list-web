@@ -14,14 +14,65 @@ html, body {
 }
 
 /* PAGE CONTAINER */
+
+
+
+/* Make Main-Container relative so stars are positioned to it */
 .Main-Container {
+    position: relative;
     width: 100vw;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 20px; /* prevent layout from sticking to edges */
+    padding: 40px 20px;
+    overflow: hidden;
 }
+
+/* Starry background behind all content */
+#starry-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+   
+    background: linear-gradient(to bottom,
+      #050505,  /* very dark top */
+      #0a0a0a,  /* slight mid variation */
+      #0e0e0e   /* bottom closer to your login panel */
+    );
+}
+
+
+/* Make sure everything else layers above the stars */
+.Login-Wrapper,
+.Login-Page-Picture,
+.Login-Panel {
+    position: relative;
+    z-index: 1;
+}
+
+/* Stars */
+#starry-bg .star {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+/* Animation */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.2; }
+}
+
+
+
+
+
 
 /* WRAPPER FOR FLEX */
 .Login-Wrapper {
@@ -35,7 +86,7 @@ html, body {
 /* LEFT SIDE IMAGE */
 .Login-Page-Picture {
     width: 450px;
-    height: 600px;
+    height: 450px;
     background-color: rgb(87, 90, 93);
     border-radius: 40px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); 
@@ -47,8 +98,8 @@ html, body {
 /* RIGHT SIDE PANEL */
 .Login-Panel {
     width: 450px;
-    height: 600px;
-    background-color: #2D2D2D;
+    height: 450px;
+    background-color: #101010;
     border-radius: 40px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); 
     display: flex;
@@ -64,7 +115,7 @@ html, body {
     font-weight: bold;
     font-family: 'Oswald', sans-serif;
     margin-bottom: 40px;
-    margin-top: 70px;
+    margin-top: 5px;
     margin-left: 10%;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -595,6 +646,7 @@ label.task-item {
     color: rgba(255, 255, 255, 0.7);
     text-transform: uppercase;
     letter-spacing: 1px;
+
 }
 .cal-day-cell {
     background-color: #101010;

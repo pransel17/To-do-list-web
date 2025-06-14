@@ -1,3 +1,17 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // FOR SIGNIN BUTTON FOR MAIN PAGE
 const SignInButton = document.getElementById("Sign-In-Button");
 const HomePage = document.getElementById("HomePage");
@@ -278,7 +292,7 @@ function addTaskStyles() {
         }
 
         .task-panel-content {
-            background: white;
+            background: #1a1a1a;
             border-radius: 15px;
             padding: 25px;
             width: 90%;
@@ -290,18 +304,20 @@ function addTaskStyles() {
 
         .task-panel h2 {
             margin-bottom: 15px;
-            color: #333;
+            color: #F4F4F4;
             text-align: center;
+            font-family: oswald;
         }
 
         .selected-date {
-            background: #007bff;
-            color: white;
+            background: #00FFFF;
+            color: black;
             padding: 10px;
             border-radius: 8px;
             text-align: center;
             margin-bottom: 15px;
             font-weight: bold;
+            font-family: oswald;
         }
 
         .task-form input, .task-form textarea {
@@ -312,6 +328,8 @@ function addTaskStyles() {
             margin-bottom: 10px;
             font-size: 14px;
             box-sizing: border-box;
+            background: #1E1E1E;
+            color: #F4F4F4;  
         }
 
         .task-form textarea {
@@ -388,7 +406,7 @@ function addTaskStyles() {
 
         .task-preview-item {
             background: #2a2a2a;
-            color: white;
+            color: #ff3333  ;
             padding: 4px 6px;
             border-radius: 6px;
             white-space: nowrap;
@@ -399,6 +417,11 @@ function addTaskStyles() {
             display: flex;
             align-items: center;
             gap: 4px;
+            margin-left: 20px;
+            letter-spacing: 1px;
+            font-family: oswald;
+
+
         }
 
         .task-preview-item.completed {
@@ -412,10 +435,7 @@ function addTaskStyles() {
             font-size: 10px;
         }
 
-        .task-preview-item.important::before {
-            content: "🔴";
-            font-size: 8px;
-        }
+
 
         .task-preview-item.more::before {
             content: "···";
@@ -576,7 +596,6 @@ function displayTasksForDate(dateKey) {
             <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 5px;">
                 <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleTaskComplete('${dateKey}', ${task.id})">
                 <h4 style="margin: 0; ${task.completed ? 'text-decoration: line-through; color: #999;' : ''}">${task.title}</h4>
-                <button class="btn" onclick="toggleTaskImportant('${dateKey}', ${task.id})" style="padding: 2px 6px; font-size: 10px; ${task.important ? 'background: #ff4444;' : 'background: #ccc;'}">${task.important ? '🔴' : '⭐'}</button>
             </div>
             ${task.time ? `<p class="task-time">⏰ ${formatTime(task.time)}</p>` : ''}
             ${task.description ? `<p>${task.description}</p>` : ''}
