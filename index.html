@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
-    <link rel="stylesheet" href="/stylesheet.css"> 
+    <title>index</title>
+    <link rel="stylesheet" href="/stylesheet.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Oswald:wght@200..700&family=Triodion&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -19,10 +19,13 @@
 <body>
 
     <!--LOG IN PAGE -->
+
+    <!-- LOG IN PAGE -->
     <div class="Main-Container">
       <!-- starry-bg is independent, does NOT wrap Login-Wrapper -->
       <div id="starry-bg"></div>
     
+      <!-- LOGIN PANEL -->
       <div class="Login-Wrapper">
         <div class="Login-Page-Picture"></div>
         <div class="Login-Panel">
@@ -41,11 +44,29 @@
           </div>
     
           <div class="Sign-Up-Botton">
-            Don't have an account? <a href="#">Sign Up!</a>
+            Don't have an account? <a href="#" id="showSignUp">Sign Up!</a>
           </div>
         </div>
       </div>
     </div>
+    
+    <!-- SIGN-UP PANEL (Hidden by default) -->
+    <div class="Signup-Panel" id="Signup-Panel" style="display: none;">
+      <div id="Sign-Up-Text">Sign up</div>
+      <div class="Sign-Up-InputFields"> 
+        <input type="text" class="Login-Panel-Input" placeholder="New Username" />
+        <input type="password" class="Login-Panel-Input" placeholder="New Password" />
+        <input type="password" class="Login-Panel-Input" placeholder="Confirm Password" />
+      </div>
+      <button id="Sign-Up-Button">Create Account!</button>
+      <div style="margin-top: 10px;">
+        <a href="#" id="backToLogin">← Back to Login</a>
+      </div>
+    </div>
+    
+    
+    <!--FOR SIGN UP PANEL-->
+    
     
 
 

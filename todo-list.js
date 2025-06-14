@@ -1,8 +1,21 @@
 
+// FOR SIGN UP PANEL
+const showSignUp = document.getElementById("showSignUp");
+const backToLogin = document.getElementById("backToLogin");
+const loginWrapper = document.querySelector(".Login-Wrapper");
+const signupPanel = document.getElementById("Signup-Panel");
 
+showSignUp.addEventListener("click", (e) => {
+  e.preventDefault();
+  loginWrapper.style.display = "none";
+  signupPanel.style.display = "flex";
+});
 
-
-
+backToLogin.addEventListener("click", (e) => {
+  e.preventDefault();
+  signupPanel.style.display = "none";
+  loginWrapper.style.display = "flex";
+});
 
 
 
